@@ -6,20 +6,18 @@
 
 ## 安装
 
-首次安装，在 PowerShell 中执行（目标目录须不存在）：
+从本仓库正式版本标签下载完整文件，解压到用户全局 `skills/plink-u3d-ui-code/` 或项目允许的技能目录；安装目录不带 `.git`，不要只复制 SKILL.md。
 
-```powershell
-git clone https://github.com/NiHaiMaker/u3d-ui-code.git "$env:USERPROFILE\.codex\skills\u3d-ui-code"
-```
+新 UI 编码任务开始时，Agent 按 [版本检查与更新](references/version-updates.md) 检查一次。发现新版后展示版本和变更，用户选择更新或继续本地版本；已有明确的本次自动更新授权则直接执行。纯阅读、审核或维护 Skill 不自动更新。
 
-如果已通过 Git 安装，可在技能目录执行 `git pull --ff-only` 更新。已有手工安装目录时，先保留本地改动，再用仓库中的 `SKILL.md`、`agents/` 和 `references/` 同步更新。
+更新使用 Python 3 和 Git，在临时目录核验来源与版本，不在安装目录创建 `.git`。本地增删改会阻止覆盖，更新固定到已展示并获准的提交；Git 管理的技能安装须保留并自行按其版本控制流程维护，不能由便携更新脚本替换。
 
 ## 使用
 
-提供策划案和已生成的 Prefab 路径，并在请求中指定 `$u3d-ui-code`：
+提供策划案和已生成的 Prefab 路径，并在请求中指定 `$plink-u3d-ui-code`：
 
 ```text
-使用 $u3d-ui-code，这是策划案和已生成的 Prefab。
+使用 $plink-u3d-ui-code，这是策划案和已生成的 Prefab。
 先列出任务、实现方式及缺少的资源和数据，等我确认。
 ```
 
@@ -46,6 +44,10 @@ git clone https://github.com/NiHaiMaker/u3d-ui-code.git "$env:USERPROFILE\.codex
 
 | 文件 | 用途 |
 | --- | --- |
+| [VERSION](VERSION) | 当前版本号 |
+| [CHANGELOG.md](CHANGELOG.md) | 发布变更 |
+| [scripts/skill_update.py](scripts/skill_update.py) | 版本检查与受控更新 |
+| [references/version-updates.md](references/version-updates.md) | 调用前更新协议 |
 | [SKILL.md](SKILL.md) | 技能入口、核心约定与三阶段工作流 |
 | [agents/openai.yaml](agents/openai.yaml) | 技能显示名称与默认提示 |
 | [references/plink-xugui.md](references/plink-xugui.md) | PLink / XUGUI 项目接入说明 |

@@ -1,4 +1,4 @@
 interface:
   display_name: "U3D UI 编码"
   short_description: "根据策划案和现有 Prefab 拆解任务与资源数据缺口，确认后逐项实现 UI"
-  default_prompt: "使用 $u3d-ui-code，根据我提供的策划案和已生成的 Prefab，先列出任务清单、实现方式及缺少的资源和数据，等我确认后逐 task 实现；默认只改业务，未经明确同意不拆出 .Storage.cs 等职责分文件、不改框架，并保留运行时组件和样式限制。"
+  default_prompt: "使用 $plink-u3d-ui-code，根据我提供的策划案和已生成的 Prefab，先列出任务清单、实现方式及缺少的资源和数据，等我确认后逐 task 实现；默认只改业务，未经明确同意不拆出 .Storage.cs 等职责分文件、不改框架，并保留运行时组件和样式限制。"

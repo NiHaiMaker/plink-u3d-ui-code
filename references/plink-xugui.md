@@ -4,8 +4,8 @@
 
 ## 项目规范路由
 
-1. 先执行仓库入口规定的 `.cursor/` 枚举与按需读取，遵守 `.cursor/rules/read-exclusions.mdc`、`ai-workflow.mdc` 和项目 SSOT 优先级。
-2. 完整读取目标项目存在的 `.cursor/skills/plink-ui-panels/SKILL.md`、`reference.md`、`examples.md`。
+1. 先执行目标仓库入口规定的枚举与按需读取，遵守实际 SSOT 的读取排除项、`ai-workflow.mdc` 和优先级；采用 `.aiworkflow/` 的项目从该目录读取，旧项目仅在其入口仍明确指定 `.cursor/` 时使用旧路径。
+2. 按目标仓库实际 SSOT 路径，完整读取存在的 `plink-ui-panels/SKILL.md`、`reference.md`、`examples.md`；采用 `.aiworkflow/` 时使用 `.aiworkflow/skills/plink-ui-panels/`。
 3. 编写 PLink 手写代码前，读取 `plink-framework` 及其配套资料和 C# 命名/类布局规则；涉及 PSD 处理时才读取项目 PSD 技能与用户指定的 PSD 工作流。
 4. 从源码确认生成器、Item 克隆/回收、事件 API 与安装的可选扩展；缺少 Skill 或能力时不能按历史接口猜测。
 5. 本 Skill 的运行时禁令是用户对本轮 UI 实现的限制。其他 Skill 中的运行时补组件、动态查找、临时创建节点等示例，不因此成为获准方案。
